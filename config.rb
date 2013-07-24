@@ -8,7 +8,8 @@ set :js_dir, 'javascripts'
 set :images_dir, 'images'
 set :build_dir, 'build'
 
-activate :livereload
+activate :relative_assets
+set :relative_links, true
 activate :automatic_image_sizes
 
 page "*", :layout => :layout, :page_type=>''
