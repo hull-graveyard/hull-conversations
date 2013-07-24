@@ -1,0 +1,53 @@
+        Hull.require(['handlebars'], function(Handlebars) {
+          window.Hull.templates || (window.Hull.templates = {});
+          window.Hull.templates["conversations/list/list"] = function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2, options;
+  buffer += "\n  <div class=\"media item\" data-hull-action=\"select\" data-hull-id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n    <a class=\"pull-left\" href=\"#\">\n      <img class=\"media-object avatar\" src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.actor),stack1 == null || stack1 === false ? stack1 : stack1.picture)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n    </a>\n    <div class=\"media-body\">\n      <h5 class=\"media-heading\">";
+  if (stack2 = helpers.name) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.name; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</h5>\n      <small><i class=\"icon icon-power\"></i> ";
+  if (stack2 = helpers.messages_count) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.messages_count; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</small>\n      ·\n      <small><i class=\"icon icon-sun_stroke\"></i> ";
+  options = {hash:{},data:data};
+  buffer += escapeExpression(((stack1 = helpers.fromNow || depth0.fromNow),stack1 ? stack1.call(depth0, depth0.updated_at, options) : helperMissing.call(depth0, "fromNow", depth0.updated_at, options)))
+    + "</small>\n    </div>\n  </div>\n";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n  ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.errors),stack1 == null || stack1 === false ? stack1 : stack1.conversations), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  
+  return "\n    <div class=\"alert alert-error\">\n      Unable to retrieve the conversations.\n    </div>\n  ";
+  }
+
+  stack1 = helpers.each.call(depth0, depth0.conversations, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  };
+          return window.Hull.templates["conversations/list/list"];
+        });

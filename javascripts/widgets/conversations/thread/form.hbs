@@ -1,0 +1,47 @@
+        Hull.require(['handlebars'], function(Handlebars) {
+          window.Hull.templates || (window.Hull.templates = {});
+          window.Hull.templates["conversations/thread/form"] = function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n  <form data-hull-item=\"form\">\n    <div class='media'>\n      <div class=\"pull-left\">\n        <img class=\"media-object avatar\" src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.picture)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" alt=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n      </div>\n      <div class=\"media-body message_entry\">\n        <textarea name='description' class=\"input-block-level\" rows=\"3\" placeholder=\"Send a message... \"></textarea>\n        <button data-hull-action=\"message\" data-hull-id=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.conversation),stack1 == null || stack1 === false ? stack1 : stack1.id)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"btn btn-small\">\n          <i class=\"icon icon-reply\"></i>\n          ";
+  stack2 = helpers['if'].call(depth0, depth0.isNew, {hash:{},inverse:self.program(4, program4, data),fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n        </button>\n      </div>\n    </div>\n  </form>\n";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  
+  return "Send";
+  }
+
+function program4(depth0,data) {
+  
+  
+  return "Reply";
+  }
+
+function program6(depth0,data) {
+  
+  
+  return "\n  <div data-hull-widget=\"login_button@hull\"></div>\n";
+  }
+
+  stack1 = helpers['if'].call(depth0, depth0.loggedIn, {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  };
+          return window.Hull.templates["conversations/thread/form"];
+        });
