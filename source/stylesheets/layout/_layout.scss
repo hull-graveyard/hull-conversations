@@ -1,0 +1,40 @@
+.container{
+  width:100%;
+}
+
+.row-fluid{
+  @for $i from 1 through 12 {
+    .span#{$i} {
+      width:percentage($i/12);
+      margin:0;
+    }
+  }
+}
+
+%sidebar{
+  width: $sidebarWidth;
+}
+.navbar-fixed-top, .navbar-fixed-bottom{
+  @extend %sidebar;
+}
+
+.sidebar{
+  @extend %sidebar;
+  top:0;
+  bottom: 0;
+  position: absolute;
+  .topics{
+    width:100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    padding-top:$navbarHeight;
+    padding-bottom:$navbarHeight;
+    overflow: scroll;
+    box-sizing:border-box;
+  }
+}
+
+.conversation_container{
+  margin-left: $sidebarWidth;
+}

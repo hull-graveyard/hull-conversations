@@ -1,0 +1,64 @@
+{{#if errors.conversation}}
+  <div class="alert alert-error">Unable to retrieve the conversation</div>
+{{else}}
+  {{#if conversation}}
+
+    <div class="page-header">
+      <div class='participants'>
+        {{#conversation.participants}}
+          <img class="avatar" data-toggle="tooltip" title="{{name}}" data-placement="bottom" src="{{picture}}" width="50" alt="{{name}}">
+        {{/conversation.participants}}
+      </div>
+      <h5>
+        <div class='pull-right'>
+          {{#if conversation.isDeletable}}
+            <button data-hull-action="delete" data-hull-id="{{conversation.id}}" class="btn btn-link btn-small">
+              <i class="icon icon-trash"></i>
+              Delete conversation
+            </button>
+          {{/if}}
+          <small><strong>{{conversation.messages_count_unread}} unread</strong> / {{conversation.messages_count}} messages</small>
+        </div>
+        {{conversation.name}}
+      </h5>
+    </div>
+
+    {{#if conversation.notification_enabled}}
+      <form class="hull-conversation__notifications">
+        <input type="checkbox" data-hull-action="notification" name="user_notification" {{#if conversation.notification_enabled_user}}checked{{/if}}> notify
+      </form>
+    {{/if}}
+
+      {{#if messages}}
+        <ul class="media-list">
+          {{#messages}}
+            <li class="media {{#if isMe}}mine{{/if}}" data-hull-message-id="{{id}}">
+              <div class="pull-left">
+                <img class="avatar media-object" src="{{actor.picture}}" width="50" alt="{{actor.name}}">
+              </div>
+              <div class="media-body">
+                <small class="muted pull-right">{{fromNow created_at}}</small>
+                <h6 class="media-heading">
+                  {{#if isNew}}
+                    <small class="new_message">
+                      <i class="icon icon-fire"></i>
+                    </small>
+                  {{/if}}
+                  {{actor.name}}
+                </h6>
+                <p> {{body}} </p>
+                <div class="hull-messages__actions">
+                    {{#if isDeletable}}
+                      <small>
+                        <a href="#" class='link' data-hull-action="deleteMsg" data-hull-id="{{id}}">Delete</a>
+                      </small>
+                    {{/if}}
+                </div>
+              </div>
+            </li>
+          {{/messages}}
+        </ul>
+      {{/if}}
+      {{> conversations/thread/form}}
+  {{/if}}
+{{/if}}

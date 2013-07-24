@@ -1,0 +1,19 @@
+{{#each conversations}}
+  <div class="media item" data-hull-action="select" data-hull-id="{{id}}">
+    <a class="pull-left" href="#">
+      <img class="media-object avatar" src="{{actor.picture}}">
+    </a>
+    <div class="media-body">
+      <h5 class="media-heading">{{name}}</h5>
+      <small><i class="icon icon-power"></i> {{messages_count}}</small>
+      ·
+      <small><i class="icon icon-sun_stroke"></i> {{fromNow updated_at}}</small>
+    </div>
+  </div>
+{{else}}
+  {{#if errors.conversations}}
+    <div class="alert alert-error">
+      Unable to retrieve the conversations.
+    </div>
+  {{/if}}
+{{/each}}

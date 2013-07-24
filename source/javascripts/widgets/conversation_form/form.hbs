@@ -1,0 +1,9 @@
+<form class="navbar-form plus">
+  {{#if loggedIn}}
+    <i class="icon icon-plus"></i>          
+    <input type="text" name="name" placeholder="New thread"></input>
+    <button class='info' data-hull-action="create">↵</button>
+  {{else}}
+    <div data-hull-widget="login_button@hull"></div>
+  {{/if}}
+</form>

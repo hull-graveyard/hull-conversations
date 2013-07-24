@@ -1,0 +1,18 @@
+{{#if loggedIn}}
+  <form data-hull-item="form">
+    <div class='media'>
+      <div class="pull-left">
+        <img class="media-object avatar" src="{{me.picture}}" alt="{{me.name}}">
+      </div>
+      <div class="media-body message_entry">
+        <textarea name='description' class="input-block-level" rows="3" placeholder="Send a message... "></textarea>
+        <button data-hull-action="message" data-hull-id="{{conversation.id}}" class="btn btn-small">
+          <i class="icon icon-reply"></i>
+          {{#if isNew}}Send{{else}}Reply{{/if}}
+        </button>
+      </div>
+    </div>
+  </form>
+{{else}}
+  <div data-hull-widget="login_button@hull"></div>
+{{/if}}

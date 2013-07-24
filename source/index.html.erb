@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Hull Conversations</title>
+
+    <link rel="stylesheet" href="//hullstrap.s3.amazonaws.com/stylesheets/hullstrap.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <script type="text/javascript" src="//use.typekit.net/jyf4qww.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//hullstrap.s3.amazonaws.com/javascripts/hullstrap.js"></script>
+    <%= javascript_include_tag "#{data.hull.jsUrl}/#{data.hull.version}/hull.js", :debug => true %>
+    <%= javascript_include_tag "app", :debug => true %>
+  </head>
+
+  <body>
+    <a href="https://github.com/hull/hull-conversations"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="http://aral.github.com/fork-me-on-github-retina-ribbons/right-red@2x.png" alt="Fork me on GitHub"></a>    
+    <div>
+      <div class="sidebar" data-hull-widget="subjects"> </div>
+      <div class="conversation_container">
+        <div class="conversation" data-hull-widget="conversations/thread@hull" data-hull-focus="true"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,20 @@
+.media.mine{
+  .pull-left{
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+  }
+  .pull-right{
+    margin-left: 0;
+    margin-right: 10px;
+    float: left;
+  }
+  .media-heading{
+    text-align: right;
+  }
+  .media-body p{
+    float: right;
+    background-color: #09AD16;
+    border-radius: 20px 0 20px 20px;
+  }
+}
