@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<div class="navbar navbar-top">
   <div class="navbar-inner">
     <div class="container">
       <ul class="nav pull-right">
@@ -7,25 +7,23 @@
             <span class='conversations-subject'>All Topics</span>
             <b class="caret"></b>
           </a>
+
           <ul class="dropdown-menu">
             <li><a href='#' data-hull-action='select' data-hull-uid=''> All Topics</a> </li>
             <li class="divider"></li>
             {{#each subjects}}
-              <li> <a href='#' data-hull-action='select' data-hull-uid='{{name}}'> {{name}} </a> </li>
+              <li><a href='#' data-hull-action='select' data-hull-uid='{{name}}'>{{name}}</a></li>
             {{/each}}
           </ul>
         </li>
       </ul>
-      <ul class='nav'>
-        <li>
-          <a>Hull Conversations</a>
-        </li>
-      </ul>
+      <h1>Hull Conversations</h1>
     </div>
   </div>
 </div>
+
 <div data-hull-widget="conversations/list@hull" class="topics" data-hull-visibility="public" data-hull-uid="{{name}}"></div>
-<div class="navbar navbar-fixed-bottom">
+
+<div class="navbar navbar-bottom">
   <div data-hull-widget="conversation_form" class="navbar-inner new_conversation">
 </div>
-

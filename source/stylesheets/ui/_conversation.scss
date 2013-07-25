@@ -1,29 +1,34 @@
-.conversation_container{
+.conversation-container {
+  padding: 0 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 25%;
+  overflow-y: scroll;
 }
 
-.conversation{
-  // @include border-radius(4px);
-  // border: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 15px auto;
-  padding: 0 35px;
-  max-width: 800px;
-  min-width: 250px;
+.conversation {
   box-sizing: border-box;
-  .media-body{
-    p{
-      background: #CBD6EB;
+  margin: 0 auto;
+  min-width: 250px;
+  max-width: 800px;
+
+  .media-body {
+    p {
       @include border-radius(0 20px 20px);
-      padding: 4px 20px;
-      max-width: 100%;
-      width: auto;
       display: inline-block;
+      padding: 4px 20px;
+      max-width: 80%;
+      width: auto;
+      background: #CBD6EB;
       background:#4786FF;
       color:white;
     }
   }
+
   .media-heading{
     font-weight: normal;
     font-size: 12px;
   }
 }
-

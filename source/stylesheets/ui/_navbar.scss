@@ -1,21 +1,69 @@
-.navbar-fixed-bottom, .navbar-fixed-top,.navbar-static-top{
-  .navbar-inner{
-    @include box-shadow(none);
+.sidebar {
+  width: 25%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  .topics {
+    box-sizing:border-box;
+    width: 100%;
+    padding: $navbarHeight 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+  }
+}
+
+%navbar {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  position: absolute;
+  z-index: 10;
+}
+
+.navbar-top {
+  @extend %navbar;
+  top: 0;
+
+  .navbar-inner {
+    border-width: 0 0 1px 0;
+  }
+
+  h1 {
+    font-size: 13px;
+    margin: 21px 0 0;
+    line-height: 1;
+  }
+
+  .nav > li > a {
+    padding-right: 0;
+  }
+}
+
+.navbar-bottom {
+  @extend %navbar;
+  bottom: 0;
+
+  .navbar-inner {
+    border-width: 1px 0 0 0;
   }
 }
 
 .navbar-inner{
+  padding: 0 15px;
+  border-color: $navbarBorderColor;
   @include background($navbarBackground);
-  border:1px solid $navbarBorderColor;
-  .container{
-    width: auto;
-    margin: 0 10px;
-  }
+  @include box-shadow(none);
+  @include border-radius(0);
 }
 
-.navbar-form{
-  margin: 12px;
-  input{
+.navbar-form {
+  margin: 12px 0;
+
+  input {
     font-size: 12px;
   }
 }
