@@ -1,10 +1,9 @@
-body{
-  -webkit-font-smoothing: antialiased;
-  font-family: "proxima-nova",sans-serif;
-  font-weight: 200;
+body, input, textarea {
+  font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }

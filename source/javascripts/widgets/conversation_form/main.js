@@ -1,15 +1,15 @@
 Hull.widget('conversation_form', {
-
   templates: ['form'],
+
   refreshEvents: ['model.hull.me.change'],
 
   initialize: function() {
     this.sandbox.on('hull.conversation.reset_form', function(id) {
       this.options.id = id;
       this.render();
-    }, this)
+    }, this);
   },
-  
+
   actions: {
     create: function(e, action) {
       e.preventDefault();
