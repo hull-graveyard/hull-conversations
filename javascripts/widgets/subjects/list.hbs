@@ -8,26 +8,26 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n              <li> <a href='#' data-hull-action='select' data-hull-uid='";
+  buffer += "\n              <li><a href='#' data-hull-action='select' data-hull-uid='";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "'> ";
+    + "'>";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " </a> </li>\n            ";
+    + "</a></li>\n            ";
   return buffer;
   }
 
-  buffer += "<div class=\"navbar navbar-fixed-top\">\n  <div class=\"navbar-inner\">\n    <div class=\"container\">\n      <ul class=\"nav pull-right\">\n        <li class=\"dropdown\">\n          <a href=\"\" title=\"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            <span class='conversations-subject'>All Topics</span>\n            <b class=\"caret\"></b>\n          </a>\n          <ul class=\"dropdown-menu\">\n            <li><a href='#' data-hull-action='select' data-hull-uid=''> All Topics</a> </li>\n            <li class=\"divider\"></li>\n            ";
+  buffer += "<div class=\"navbar navbar-top\">\n  <div class=\"navbar-inner\">\n    <div class=\"container\">\n      <ul class=\"nav pull-right\">\n        <li class=\"dropdown\">\n          <a href=\"\" title=\"\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">\n            <span class='conversations-subject'>All Topics</span>\n            <b class=\"caret\"></b>\n          </a>\n\n          <ul class=\"dropdown-menu\">\n            <li><a href='#' data-hull-action='select' data-hull-uid=''> All Topics</a> </li>\n            <li class=\"divider\"></li>\n            ";
   stack1 = helpers.each.call(depth0, depth0.subjects, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n          </ul>\n        </li>\n      </ul>\n      <ul class='nav'>\n        <li>\n          <a>Hull Conversations</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n<div data-hull-widget=\"conversations/list@hull\" class=\"topics\" data-hull-visibility=\"public\" data-hull-uid=\"";
+  buffer += "\n          </ul>\n        </li>\n      </ul>\n      <h1>Hull Conversations</h1>\n    </div>\n  </div>\n</div>\n\n<div data-hull-widget=\"conversations/list@hull\" class=\"topics\" data-hull-visibility=\"public\" data-hull-uid=\"";
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"></div>\n<div class=\"navbar navbar-fixed-bottom\">\n  <div data-hull-widget=\"conversation_form\" class=\"navbar-inner new_conversation\">\n</div>\n\n";
+    + "\"></div>\n\n<div class=\"navbar navbar-bottom\">\n  <div data-hull-widget=\"conversation_form\" class=\"navbar-inner new_conversation\">\n</div>\n";
   return buffer;
   };
           return window.Hull.templates["subjects/list"];
