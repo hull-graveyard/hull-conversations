@@ -40,6 +40,11 @@
   .sidebar{
     z-index: 100;
     position: fixed;
+    .plus .info{
+       -webkit-text-size-adjust:none;
+       bottom: 18px;
+       right: 10px;
+    }
     .navbar-toggle{
       position:fixed;
       right: -72px;

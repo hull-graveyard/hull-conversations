@@ -3,7 +3,9 @@
     <i class="icon icon-plus"></i>
     <input type="text" name="name" placeholder="New thread"></input>
     <button class='info' data-hull-action="create">↵</button>
-  {{else}}
-    <div data-hull-widget="login_button@hull"></div>
+    <i class="icon icon-cog" data-toggle="modal" data-target="#preferences"></i>
+{{else}}
+    <div data-hull-widget="login_button@hull" class='login_buttons'></div>
   {{/if}}
 </form>
+

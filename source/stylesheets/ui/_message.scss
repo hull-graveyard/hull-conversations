@@ -1,11 +1,14 @@
+textarea, input[type="text"]{
+  -webkit-appearance:none;
+  border: 1px solid $light_gray;
+  @include box-shadow(none);
+  @include border-radius(4px);
+  @include transition(all .2s ease);
+}
 .message_entry{
   position: relative;
   textarea{
     height: 32px;
-    border: 1px solid $light_gray;
-    @include box-shadow(none);
-    @include border-radius(4px);
-    @include transition(all .2s ease);
     & + .btn{
       position: absolute;
       right: 3px;

@@ -1,5 +1,5 @@
 .plus{
-  i.icon-plus{
+  .icon-plus, .icon-cog{
     cursor: pointer;
     background: none;
     position: absolute;
@@ -10,21 +10,24 @@
     width: 30px;
     height: 30px;
     text-align: center;
-    & + input{
-      margin-top: 0;
-      font-size: 12px;
-      box-sizing:border-box;
-      height: 30px;
-      width: 30px;
-      opacity: 0;
-      z-index: 100;
-      position: relative;
-      border:1px solid $blue;
-      &:focus{
-        opacity: 1;
-        width: 316px;
-        max-width: 100%;
-      }
+  }
+  .icon-cog{
+    right: 20px;
+  }
+  i.icon-plus + input{
+    margin-top: 0;
+    font-size: 12px;
+    box-sizing:border-box;
+    height: 30px;
+    width: 30px;
+    opacity: 0;
+    z-index: 100;
+    position: relative;
+    border:1px solid $blue;
+    &:focus{
+      opacity: 1;
+      width: 316px;
+      max-width: 100%;
     }
   }
   .info{
@@ -32,23 +35,22 @@
     color: $blue;
     position: absolute;
     bottom: 13px;
-    right: 20px;
+    right: 270px;
     z-index: 101;
+    font-size: 16px;
+    background:none;
+    border:none;
+    line-height: 1;
     @include transition(all 0.5s ease);
   }
-  input:focus + .info{
-    opacity: 1;
+  input{
+    @include transition(all 0.5s ease);
+    padding: 5px 15px;
+    border:0;
+    line-height: 2;
+    &:focus + .info{
+      right: 20px;
+      opacity: 1;
+    }
   }
-}
-
-.plus input{
-  @include transition(all 0.5s ease);
-  padding: 5px 15px;
-  border:0;
-  line-height: 2;
-}
-.plus button{
-  background:none;
-  border:none;
-  line-height: 1;
 }

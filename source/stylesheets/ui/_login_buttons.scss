@@ -1,0 +1,15 @@
+.login_buttons{
+  button.btn{
+    margin-top: 0;
+    background: rgba(0,0,0,.1);
+    width: 32%;
+    text-align:center; 
+    &:hover{
+      background: $blue;
+    }
+    i{
+      color: white;
+      font-size: 2em;
+    }
+  }
+}
