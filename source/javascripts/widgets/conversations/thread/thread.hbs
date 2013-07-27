@@ -37,7 +37,6 @@
                 <img class="avatar media-object" src="{{actor.picture}}" width="50" alt="{{actor.name}}">
               </div>
               <div class="media-body">
-                <small class="muted pull-right">{{fromNow created_at}}</small>
                 <h6 class="media-heading">
                   {{#if isNew}}
                     <small class="new_message">
@@ -45,8 +44,9 @@
                     </small>
                   {{/if}}
                   {{actor.name}}
+                  <small class="muted">{{fromNow created_at}}</small>
                 </h6>
-                <p> {{body}} </p>
+                <p> {{{autoLink body}}} </p>
                 <div class="hull-messages__actions">
                     {{#if isDeletable}}
                       <small>
