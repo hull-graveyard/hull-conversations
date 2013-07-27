@@ -14,6 +14,8 @@ $navbarBorderColor:$light_gray;
 
 $navbarHeight:54px;
 $sidebarWidth:25%;
-$sidebarWidthMobile:280px;
+$sidebarWidthTablet:280px;
+$sidebarWidthMobile:100%;
 
-$break: 1000px;
+$breakTablet: 768px;
+$breakMobile: 640px;
