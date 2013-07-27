@@ -1,23 +1,16 @@
-A template for Middleman apps, ready to deploy to heroku
+### Hull Conversations demo.
 
-### Javascript
-— Coffeescript
-— Handlebars
+[Check out a demo](http://hull.github.io/hull-conversations/)
 
-### CSS
-— Scss
-— Compass
-— Animation mixins
-— Sass-getunicode
-— Fontcustom (icon fonts)
+With the Conversations API and components, you can add public and private messaging features.
 
-### HTML & Pipeline
-— Slim
-— Sprockets
-— Livereload
-— Image smushing
+The Conversations API offers Topics and Threads to organize a conversation.
 
-### Deploy.
-— Middleman-sync
-— Use Middleman Heroku buildpack
-— GH-Pages deployment target
+Threads can be a Hull object or an external entity, containing a URL (We process those to clean them up),
+or a unique ID from your product
+
+You can choose wether conversations are be public or private and who can join when creating them.
+
+We use components for this demo : [Components documentation](http://hull.io/docs/components#conversations)
+
+and of course APIs: [Conversation API documentation](http://hull.io/docs/api#endpoint-conversations)
