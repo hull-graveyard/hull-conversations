@@ -40,9 +40,6 @@
   .sidebar{
     z-index: 100;
     position: fixed;
-    .topics{
-      padding-bottom: $navbarHeight*2;
-    }
     .navbar-toggle{
       position:fixed;
       right: -72px;

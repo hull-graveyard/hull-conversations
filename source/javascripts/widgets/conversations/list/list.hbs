@@ -15,5 +15,17 @@
     <div class="alert alert-error">
       Unable to retrieve the conversations.
     </div>
+  {{else}}
+  <div class="media item" data-hull-action="select" data-hull-id="{{id}}">
+    <div class="media-body">
+      <h5 class="media-heading">There are no threads for this topic</h5>
+      <small>You can create one below</small>
+    </div>
+  </div>
   {{/if}}
 {{/each}}
+<div class="media item" data-hull-action="select" data-hull-id="{{id}}">
+  <div class="media-body">
+    <a class="" href="https://github.com/hull/hull-conversations">Fork me on Github</a>
+  </div>
+</div>
