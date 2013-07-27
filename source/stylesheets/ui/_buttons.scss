@@ -1,0 +1,11 @@
+.btn{
+  background: $btn;
+  text-shadow:none;
+  @include box-shadow(none);
+  border:none;
+  color: white;
+  &:hover{
+    background: $btnHover;
+    color: white;
+  }
+}

@@ -1,6 +1,6 @@
 {{#if loggedIn}}
   <form data-hull-item="form">
-    <div class='media'>
+    <div class='media actions'>
       <div class="pull-left">
         <img class="media-object avatar" src="{{me.picture}}" alt="{{me.name}}">
       </div>
@@ -14,5 +14,10 @@
     </div>
   </form>
 {{else}}
-  <div data-hull-widget="login_button@hull"></div>
+  <div class="login">
+    <div class="actions">
+      <p>Sign in to join the conversation</p>
+      <div data-hull-widget="login_button@hull"></div>
+    </div>
+  </div>
 {{/if}}

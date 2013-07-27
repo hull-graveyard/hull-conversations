@@ -4,7 +4,7 @@ Hull.widget('conversation_form', {
   refreshEvents: ['model.hull.me.change'],
 
   initialize: function() {
-    this.sandbox.on('hull.conversation.reset_form', function(id) {
+    this.sandbox.on('hull.conversations.reload', function(id) {
       this.options.id = id;
       this.render();
     }, this);
@@ -22,7 +22,7 @@ Hull.widget('conversation_form', {
         self.conversationId = convo.id;
         setTimeout(function() {
           self.sandbox.emit('hull.conversation.select', convo.id);
-          self.sandbox.emit('hull.conversation.reload', self.options.id);
+          self.sandbox.emit('hull.conversations.reload', self.options.id);
         }, 200);
         self.render();
       });

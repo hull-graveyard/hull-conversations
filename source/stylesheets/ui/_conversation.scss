@@ -1,19 +1,26 @@
 .conversation-container {
-  padding: 0 15px;
-  position: absolute;
+  padding: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 25%;
+  margin-left: 25%;
   overflow-y: scroll;
 }
 
 .conversation {
-  box-sizing: border-box;
-  margin: 0 auto;
-  min-width: 250px;
-  max-width: 800px;
-
+  .media-list, .page-header, .actions{
+    box-sizing: border-box;
+    margin: 15px auto;
+    padding: 0 35px;
+    max-width: 800px;
+    min-width: 250px;
+  }
+  form, .login{
+    background-color: rgba($blue,.2);
+    .media, .actions{
+      padding:20px 35px;
+    }
+  }
   .media-body {
     p {
       @include border-radius(0 20px 20px);
@@ -24,6 +31,10 @@
       background: #CBD6EB;
       background:#4786FF;
       color:white;
+      a{
+        text-decoration: underline;
+        color: lighten($blue,5%);
+      }
     }
   }
 

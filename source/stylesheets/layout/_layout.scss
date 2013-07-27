@@ -1,9 +1,75 @@
-@media screen and (max-width: $break) {
+
+@media screen and (max-width: $breakTablet) {
   .sidebar {
-    width: 280px;
+    width: $sidebarWidthTablet;
   }
 
   .conversation-container {
-    left: 280px;
+    margin-left: $sidebarWidthTablet;
+  }
+  .visible-phone{
+    display: none;
+  }
+}
+
+@media screen and (max-width: $breakMobile) {
+  .hidden-phone{
+    display: none;
+  }
+  .visible-phone{
+    display: block;
+  }
+  .sidebar {
+    width: $sidebarWidthMobile;
+  }
+
+  .conversation-container {
+    margin-left: $sidebarWidthMobile;
+  }
+  .page{
+    min-height: 100%;
+    // position: relative;
+  }
+  .sidebar, .conversation-container{
+    @include transition(all .2s ease-in-out);
+    @include transform(translate3d(0,0,0));
+    .closed &{
+      @include transform(translate3d(-$sidebarWidthMobile,0,0));
+    }
+  }
+  .sidebar{
+    z-index: 100;
+    position: fixed;
+    .topics{
+      padding-bottom: $navbarHeight*2;
+    }
+    .navbar-toggle{
+      position:fixed;
+      right: -72px;
+      top:11px;
+      width:40px;
+      height:40px;
+      padding: 11px 6px;
+      background: rgba($blue,.7);
+      border:none;
+      @include border-radius(100%);
+      .icon-bar{
+        width: 85%;
+        margin:0 auto 4px auto;
+        height: 3px;
+        background: white;
+        @include border-radius(3px);
+        display: block;
+      }
+    }
+  }
+  .conversation-container{
+    margin-left: 0;
+    position: relative;
+    left: $sidebarWidthMobile;
+  }
+  .conversation .page-header{
+    padding-left: 80px;
+
   }
 }
