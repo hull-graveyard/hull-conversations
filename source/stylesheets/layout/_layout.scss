@@ -1,9 +1,9 @@
 @media screen and (max-width: $break) {
   .sidebar {
-    width: 280px;
+    width: $sidebarWidthMobile;
   }
 
   .conversation-container {
-    left: 280px;
+    margin-left: $sidebarWidthMobile;
   }
 }

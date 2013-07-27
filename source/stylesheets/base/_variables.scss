@@ -1,13 +1,19 @@
 $blue:#A8BADB;
 $blue_gray:#7C8086;
+$subtle_blue:#EDF0F5;
 $light_gray:#DCDDDF;
 $white:#fff;
 
 $lightText:$blue_gray;
+$lightBackground:$blue;
+$btn:saturate($blue,50%);
+$btnHover:darken(saturate($blue,100%),20%);
 
 $navbarBackground:$white;
 $navbarBorderColor:$light_gray;
 
 $navbarHeight:54px;
 $sidebarWidth:25%;
+$sidebarWidthMobile:280px;
+
 $break: 1000px;
