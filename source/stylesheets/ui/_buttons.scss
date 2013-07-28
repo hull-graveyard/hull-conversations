@@ -9,3 +9,10 @@
     color: white;
   }
 }
+
+.btn-link{
+  color: $btn;
+  &:hover{
+    color: $btnHover;
+  }
+}

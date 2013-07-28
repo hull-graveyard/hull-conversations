@@ -21,8 +21,8 @@ Hull.widget('conversation_form', {
       this.api(url, 'post', formData).then(function(convo) {
         self.conversationId = convo.id;
         setTimeout(function() {
-          self.sandbox.emit('hull.conversation.select', convo.id);
           self.sandbox.emit('hull.conversations.reload', self.options.id);
+          self.sandbox.emit('hull.conversation.select', convo.id);
         }, 200);
         self.render();
       });

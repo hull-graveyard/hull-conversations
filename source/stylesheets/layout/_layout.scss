@@ -43,8 +43,11 @@
     .plus .info{
        -webkit-text-size-adjust:none;
        bottom: 18px;
-       right: 10px;
+       right: -50px;
     }
+    input:focus + .info{
+       right: 10px;
+     }
     .navbar-toggle{
       position:fixed;
       right: -72px;
@@ -55,12 +58,17 @@
       background: rgba($blue,.7);
       border:none;
       @include border-radius(100%);
-      .icon-bar{
-        width: 85%;
-        margin:0 auto 4px auto;
-        height: 3px;
-        background: white;
-        @include border-radius(3px);
+      .arrow{
+        position: relative;
+        border:2px solid white;
+        top:-1px;
+        left: 9px;
+        width: 15px;
+        height: 15px;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        @include transform(rotate(-45deg)); 
+        background: transparent;
         display: block;
       }
     }
@@ -72,6 +80,14 @@
   }
   .conversation .page-header{
     padding-left: 80px;
-
+  }
+  .modal{
+    left: 0;
+    margin:0;
+    width: 100%;
+    .identity [data-hull-action="login"]{
+      width: 100%;
+      margin-bottom: 10px;
+    } 
   }
 }
