@@ -1,0 +1,75 @@
+        Hull.require(['handlebars'], function(Handlebars) {
+          window.Hull.templates || (window.Hull.templates = {});
+          window.Hull.templates["login_button/login_button"] = function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this, blockHelperMissing=helpers.blockHelperMissing;
+
+function program1(depth0,data) {
+  
+  
+  return "\n  <button data-hull-action=\"logout\" class=\"btn btn-small btn-link\">\n    Sign Out\n  </button>\n";
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n  ";
+  stack1 = helpers['if'].call(depth0, depth0.loggedOut, {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  ";
+  options = {hash:{},inverse:self.program(7, program7, data),fn:self.noop,data:data};
+  if (stack1 = helpers.authServices) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = depth0.authServices; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (!helpers.authServices) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  var buffer = "", stack1, options;
+  buffer += "\n    ";
+  options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
+  if (stack1 = helpers.loggedOut) { stack1 = stack1.call(depth0, options); }
+  else { stack1 = depth0.loggedOut; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  if (!helpers.loggedOut) { stack1 = blockHelperMissing.call(depth0, stack1, options); }
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  ";
+  return buffer;
+  }
+function program5(depth0,data) {
+  
+  var buffer = "";
+  buffer += "\n      <button data-hull-action=\"login\" data-hull-provider=\""
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\" class=\"btn btn-"
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\"><i class=\"icon-"
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\"></i></button>\n    ";
+  return buffer;
+  }
+
+function program7(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    ";
+  stack1 = helpers['if'].call(depth0, depth0.debug, {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  ";
+  return buffer;
+  }
+function program8(depth0,data) {
+  
+  
+  return "\n      <div class=\"alert\">\n        <h4>Warning!</h4>\n        No Auth Services configured, please add at least one in the admin.\n      </div>\n    ";
+  }
+
+  stack1 = helpers['if'].call(depth0, depth0.matchingProviders, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  };
+          return window.Hull.templates["login_button/login_button"];
+        });

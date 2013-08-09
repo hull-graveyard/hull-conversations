@@ -8,19 +8,19 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  return "\n    <i class=\"icon icon-plus\"></i>\n    <input type=\"text\" name=\"name\" placeholder=\"New thread\"></input>\n    <button class='info' data-hull-action=\"create\">↵</button>\n  ";
+  return "\n    <i class=\"icon icon-plus\"></i>\n    <input type=\"text\" name=\"name\" placeholder=\"New thread\"></input>\n    <button class='info' data-hull-action=\"create\">↵</button>\n    <i class=\"icon icon-cog\" data-toggle=\"modal\" data-target=\"#preferences\"></i>\n";
   }
 
 function program3(depth0,data) {
   
   
-  return "\n    <div data-hull-widget=\"login_button@hull\"></div>\n  ";
+  return "\n    <div data-hull-widget=\"login_button@hull\" class='login_buttons'></div>\n  ";
   }
 
   buffer += "<form class=\"navbar-form plus\">\n  ";
   stack1 = helpers['if'].call(depth0, depth0.loggedIn, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n</form>\n";
+  buffer += "\n</form>\n\n";
   return buffer;
   };
           return window.Hull.templates["conversation_form/form"];

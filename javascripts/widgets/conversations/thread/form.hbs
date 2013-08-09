@@ -8,7 +8,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2;
-  buffer += "\n  <form data-hull-item=\"form\">\n    <div class='media'>\n      <div class=\"pull-left\">\n        <img class=\"media-object avatar\" src=\""
+  buffer += "\n  <form data-hull-item=\"form\">\n    <div class='media actions'>\n      <div class=\"pull-left\">\n        <img class=\"media-object avatar\" src=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.picture)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" alt=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.me),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
@@ -35,7 +35,7 @@ function program4(depth0,data) {
 function program6(depth0,data) {
   
   
-  return "\n  <div data-hull-widget=\"login_button@hull\"></div>\n";
+  return "\n  <div class=\"login\">\n    <div class=\"actions\">\n      <p>\n        <span data-hull-widget=\"login_button@hull\"></span>\n        Sign in to join the conversation\n      </p>\n    </div>\n  </div>\n";
   }
 
   stack1 = helpers['if'].call(depth0, depth0.loggedIn, {hash:{},inverse:self.program(6, program6, data),fn:self.program(1, program1, data),data:data});
